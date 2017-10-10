@@ -1,4 +1,4 @@
-script "app"
+﻿script "app"
 
 command PreloadApplication
   # Perform operations before stacks, extensions, and externals in app.yml are loaded.
@@ -26,7 +26,8 @@ command InitializeApplication
   -- end if
 
   # Perform initialization operations every time application runs.
-
+#set the behavior of stack "PlayerUI" to the long id of stack "stack_behavior"
+#set the behavior of card "Player" of stack "PlayerUI" to the long id of stack "card_behavior"
   return true
 end InitializeApplication
 
@@ -41,7 +42,7 @@ command OpenApplication
   # Open UI stack
 
   # Open the starter app sample window UI stack
-  go stack "LevureSampleWindow"
+  go stack "PlayerUI"
 end OpenApplication
 
 
