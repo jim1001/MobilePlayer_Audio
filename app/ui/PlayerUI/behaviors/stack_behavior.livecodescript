@@ -1,7 +1,7 @@
 ﻿script "stack_behavior"
 function initVideoMobile pRect, pVideoFile
-   answer "file:" & pVideoFile
-   local tPlayerRect, tPlayerID
+   answer "file:" && pVideoFile
+   local tPlayerID
    // Check the control doesn't already exist. If so delete and recreate it
    if tPlayerID is among the lines of mobileControls() then
       mobileControlDelete tPlayerID
@@ -10,8 +10,7 @@ function initVideoMobile pRect, pVideoFile
    put the result into tPlayerID
    # In LiveCode the rectangle of an object consists of four integers separated by commas
    # representing the object's left, top, right, and bottom edges
-   put pRect["left"] & "," & pRect["top"] & "," & pRect["right"] & "," & pRect["bottom"] into tPlayerRect
-   mobileControlSet tPlayerID, "rect", tPlayerRect --the second argument (tPlayerRect here) must be one string containing 4 comma separated numbers, not 4 individual numeric arguments  
+   mobileControlSet tPlayerID, "rect", the rect of graphic pRect --the second argument (tPlayerRect here) must be one string containing 4 comma separated numbers, not 4 individual numeric arguments  
    mobileControlSet tPlayerID, "showController", true
    if pVideoFile is not empty then
       answer "Setting file of player"
