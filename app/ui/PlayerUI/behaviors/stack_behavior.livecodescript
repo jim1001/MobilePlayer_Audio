@@ -1,6 +1,6 @@
 ﻿script "stack_behavior"
 function initVideoMobile pRect, pVideoFile
-  # answer "file:" && pVideoFile
+   # answer "file:" && pVideoFile
    local tPlayerID
    // Check the control doesn't already exist. If so delete and recreate it
    if tPlayerID is among the lines of mobileControls() then
@@ -17,6 +17,8 @@ function initVideoMobile pRect, pVideoFile
       mobileControlSet tPlayerID, "filename", pVideoFile
    end if
    mobileControlSet tPlayerID, "visible", true
-   mobileControlSet tPlayerID, "alpha", 122
+   #mobileControlSet tPlayerID, "backgroundColor", "255,255,255,122" -- R,G,B,alpha (had no effect)
+   mobileControlSet tPlayerID, "backgroundColor", "white"
+   mobileControlSet tPlayerID, "alpha", "122"
    return tPlayerID
 end initVideoMobile
