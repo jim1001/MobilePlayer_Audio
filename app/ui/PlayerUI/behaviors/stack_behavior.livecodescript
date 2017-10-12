@@ -10,12 +10,13 @@ function initVideoMobile pRect, pVideoFile
    put the result into tPlayerID
    # In LiveCode the rectangle of an object consists of four integers separated by commas
    # representing the object's left, top, right, and bottom edges
-   mobileControlSet tPlayerID, "rect", the rect of graphic pRect --the second argument (tPlayerRect here) must be one string containing 4 comma separated numbers, not 4 individual numeric arguments  
+   mobileControlSet tPlayerID, "rect", pRect --the second argument (tPlayerRect here) must be one string containing 4 comma separated numbers, not 4 individual numeric arguments  
    mobileControlSet tPlayerID, "showController", true
    if pVideoFile is not empty then
       #answer "Setting file of player"
       mobileControlSet tPlayerID, "filename", pVideoFile
    end if
    mobileControlSet tPlayerID, "visible", true
+   mobileControlSet tPlayerID, "alpha", 122
    return tPlayerID
 end initVideoMobile
